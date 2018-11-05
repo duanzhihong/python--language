@@ -135,26 +135,41 @@
 #使用as来给函数起别名
 
 # 创建类的基本使用
-class Dog():
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-    def sit(self):
-        print(self.name.title()+'sit')
-    def roll(self):
-        print(self.name.title()+'roll')
+# class Dog():
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#     def sit(self):
+#         print(self.name.title()+'sit')
+#     def roll(self):
+#         print(self.name.title()+'roll')
 # dog = Dog('gou',18)
 # dog.sit()
 # dog.roll()
 
 #类的继承 类似php继承，记得形参中添加self
-class BigDog(Dog):
-    def __init__(self, name, age):
-        super().__init__(name, age)
-    def big(self):
-        print('this is big dog')
+# class BigDog(Dog):
+#     def __init__(self, name, age):
+#         super().__init__(name, age)
+#     def big(self):
+#         print('this is big dog')
 
-bigDog = BigDog('gou', 33)
-bigDog.sit()
-bigDog.roll()
-bigDog.big()
+# bigDog = BigDog('gou', 33)
+# bigDog.sit()
+# bigDog.roll()
+# bigDog.big()
+
+#getitem setitem
+class test():
+    def __init__(self):
+        pass
+    def __getitem__(self, key):
+        return 'nonono'
+    def __setitem__(self, key, data):
+        self.key = data
+        print('setitem')
+        return 'add success'
+
+test = test()
+test[2] = 'duan'
+print(test[2])
