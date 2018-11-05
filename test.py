@@ -51,6 +51,110 @@
 # his_foods = my_foods[:]
 # print(his_foods)
 #元组 其中的数据是不可以更改的
-test = (200, 50)
-for value in test:
-    print(value)
+# test = (200, 50)
+# for value in test:
+#     print(value)
+# if语句
+# cars = ['audi', 'bmw', 'subrau', 'toyota']
+# for car in cars:
+#     if car == 'bmw':
+#         print(car.upper()) #所有文字大写
+#     else:
+#         print(car.title()) #首文字大写
+# banner_users = ['duan', 'zhi', 'hong']
+# if 'nam' not in banner_users:
+#     print('nihao')
+# test = ('duan', 'zhi', 'hong')
+# if 'no' not in test:
+#     print('oo')
+# 字典 类似与php中的关联数组
+# alien_0 = {'color':'green', 'points':5}
+# print(alien_0['color'])
+# alien_0 = {}
+# alien_0['color'] = 'green'
+# alien_0['points'] = 3
+# alien_0['points'] = 6
+# del alien_0['points'] #删除键
+# print(alien_0)
+#遍历字典
+# user_0 = {
+#     'username': 'a',
+#     'first': 'b',
+#     'last': 'c',
+#     'no': 'b'
+# }
+#遍历所有数据
+# for key, value in user_0.items():
+#     print(value)
+# #遍历键名
+# for key in user_0.keys():
+#     print(key)
+#sort将键名 进行排序后再输出
+# for key in sorted(user_0.keys()):
+#     print(key)
+# 遍历键值
+# for value in user_0.values():
+#     print(value)
+# for value in set(user_0.values()): #set无序集合
+#     print(value)
+# for value in range(5):
+#     print(value)
+
+#用户输入
+# message = input('your name')
+# print('hello'+message)
+# age = input('how old are you?')
+# print(age)
+
+#求模运算(取余)
+# print(5%3)
+
+# current = 1
+# while(current < 5):
+#     print(current)
+#     current+=1
+
+# pets = ['cat', 'cat', 'cat', 'duan', 'zhi', 'dog']
+# while 'cat' in pets:
+#     pets.remove('cat')
+# print(pets)
+
+#基本的函数
+# def greet_user():
+    # print("hello world")
+# greet_user()
+
+#模版引入
+#使用方法 module_name.function_name()
+# import test2
+# test2.test()
+#from  module_name import function_name()
+# from test2 import test as te
+#form module_name import function_name1(), function_name2()
+# te()
+#使用as来给函数起别名
+
+# 创建类的基本使用
+class Dog():
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def sit(self):
+        print(self.name.title()+'sit')
+    def roll(self):
+        print(self.name.title()+'roll')
+# dog = Dog('gou',18)
+# dog.sit()
+# dog.roll()
+
+#类的继承 类似php继承，记得形参中添加self
+class BigDog(Dog):
+    def __init__(self, name, age):
+        super().__init__(name, age)
+    def big(self):
+        print('this is big dog')
+
+bigDog = BigDog('gou', 33)
+bigDog.sit()
+bigDog.roll()
+bigDog.big()
