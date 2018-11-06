@@ -193,17 +193,66 @@
 #         print(line.rstrip())
 
 #保存内容在with之外使用
-filename = 'pi.txt'
-with open(filename) as file_object:
-        lines = file_object.readlines()
-# print(lines)
-# for line in lines:
-#     print(line.rstrip())
-pi = lines[0]
-# print(pi)
-string = ''
-for value in pi:
-    # if not value.isspace():
-        string += value.strip()
+# filename = 'pi.txt'
+# with open(filename) as file_object:
+#         lines = file_object.readlines()
+# # print(lines)
+# # for line in lines:
+# #     print(line.rstrip())
+# pi = lines[0]
+# # print(pi)
+# string = ''
+# for value in pi:
+#     # if not value.isspace():
+#         string += value.strip()
 
-print(string)
+# print(string)
+
+#写入空文件
+# filename = 'programming.txt'
+#读取模式r 写入模式w 附加模式a 读取和写入r+
+# with open(filename, 'w') as file_object:
+#     file_object.write("just do it\n")
+#     file_object.write(str(2))
+    # file_object.write(3) error
+#w:写入新的数据时候会将之前的内容清空掉
+#a:追加模式，会在文件末尾进行内容的填写
+#python只能将字符串写入到文件中，写入数值的话需要使用str函数
+
+#异常处理 模拟zero异常
+# try:
+#     print(5/0)
+# except ZeroDivisionError:
+#     print('you can\'t zero')
+
+#除法运算器
+# print("plese two number")
+# print("enter q to quit")
+# while True:
+#     first_number = input("\nFrist number:")
+#     if first_number == 'q':
+#         break
+#     second_number = input("\nSecond number:")
+#     if second_number == 'q':
+#         break
+#     try:
+#         answer = int(first_number)/int(second_number)
+#         print(answer)
+#         break
+#     except ZeroDivisionError:
+#         print('no zero')
+
+#读取文件错误的异常处理
+# fileName = 'no.txt'
+# try:
+#     with open(fileName) as file_object:
+#         concent = file_object.read()
+# except FileNotFoundError:
+#     print('no found')
+
+#切割字符串，可以和文本进行相关联
+# titile = "Alice in world"
+# arr = titile.split()
+# print(arr)
+
+
