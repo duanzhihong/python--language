@@ -255,4 +255,27 @@
 # arr = titile.split()
 # print(arr)
 
+#存储数据，通过json.dump() json.load()
+# import json
+#存储数据
+# number = [2, 3, 5, 5]
+# filename = 'number.json'
+# with open(filename, 'w') as file_object:
+#     json.dump(number, file_object)
 
+#读取数据
+# with open(filename) as file_object:
+#     number = json.load(file_object)
+# print(number)
+
+#模拟存储（跟取出缓存的思路一样）
+import json
+filename = 'remember.json'
+try:
+    with open(filename) as file_object:
+        name = json.load(file_object)
+        print('hello'+name+'!')
+except FileNotFoundError:
+    name = input('your name')
+    with open(filename, 'w') as file_object:
+        json.dump(name, file_object)
