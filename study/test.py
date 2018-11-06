@@ -182,6 +182,28 @@
 # test = range(5, 0, -1)
 # for value in test:
 #     print(value)
-test2 = range(5)
-for value in test2:
-    print(value)
+# test2 = range(5)
+# for value in test2:
+#     print(value)
+
+#遍历行
+# filename = 'pi.txt'
+# with open(filename) as file_object:
+#     for line in file_object:
+#         print(line.rstrip())
+
+#保存内容在with之外使用
+filename = 'pi.txt'
+with open(filename) as file_object:
+        lines = file_object.readlines()
+# print(lines)
+# for line in lines:
+#     print(line.rstrip())
+pi = lines[0]
+# print(pi)
+string = ''
+for value in pi:
+    # if not value.isspace():
+        string += value.strip()
+
+print(string)
