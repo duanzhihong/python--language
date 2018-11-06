@@ -160,16 +160,28 @@
 # bigDog.big()
 
 #getitem setitem
-class test():
-    def __init__(self):
-        pass
-    def __getitem__(self, key):
-        return 'nonono'
-    def __setitem__(self, key, data):
-        self.key = data
-        print('setitem')
-        return 'add success'
+# class test():
+#     def __init__(self):
+#         pass
+#     def __getitem__(self, key):
+#         return 'nonono'
+#     def __setitem__(self, key, data):
+#         self.key = data
+#         print('setitem')
+#         return 'add success'
 
-test = test()
-test[2] = 'duan'
-print(test[2])
+# test = test()
+# test[2] = 'duan'
+# print(test[2])
+
+#打开文件
+# with open('pi.txt') as file_object:
+#     contents = file_object.read()
+#     print(contents.rstrip())
+
+# test = range(5, 0, -1)
+# for value in test:
+#     print(value)
+test2 = range(5)
+for value in test2:
+    print(value)
