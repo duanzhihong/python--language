@@ -4,6 +4,10 @@ import math
 def binarySearch(arr, item):
     low = 0
     height = len(arr)-1
+    if arr[0] == item:
+        return 0
+    if arr[height] == item:
+        return height
     while low<height:
         mid = (low+height)//2
         if arr[mid] == item:
@@ -24,5 +28,6 @@ def diguiSearch(arr, item, first, last):
         return diguiSearch(arr, item, mid+1, last)
 
 arr = [1, 2, 4, 5, 6, 7, 8 ,9]
-location = diguiSearch(arr, 5, 0, 8)
+# location = diguiSearch(arr, 1, 0, 8)
+location = binarySearch(arr,9)
 print(location) 
