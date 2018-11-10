@@ -269,13 +269,28 @@
 # print(number)
 
 #模拟存储（跟取出缓存的思路一样）
-import json
-filename = 'remember.json'
-try:
-    with open(filename) as file_object:
-        name = json.load(file_object)
-        print('hello'+name+'!')
-except FileNotFoundError:
-    name = input('your name')
-    with open(filename, 'w') as file_object:
-        json.dump(name, file_object)
+# import json
+# filename = 'remember.json'
+# try:
+#     with open(filename) as file_object:
+#         name = json.load(file_object)
+#         print('hello'+name+'!')
+# except FileNotFoundError:
+#     name = input('your name')
+#     with open(filename, 'w') as file_object:
+#         json.dump(name, file_object)
+
+# def get_formatted_name(first, last):
+#     full_name = first+" "+last
+#     return full_name
+# full_name = get_formatted_name('duan', 'zhi')
+# print(full_name)
+
+#测试单元
+# import unittest
+# class NameTestCase(unittest.TestCase): #引用unittest
+#     def test(self):
+#         full_name = get_formatted_name('duan', 'zhi') #测试的函数以及返回值
+#         self.assertEqual(full_name, 'duan zhi') #判断返回值是否相等
+# unittest.main()
+
