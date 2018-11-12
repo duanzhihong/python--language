@@ -294,3 +294,11 @@
 #         self.assertEqual(full_name, 'duan zhi') #判断返回值是否相等
 # unittest.main()
 
+# arr = [1,2,3,4]
+# print(arr[:2])
+# print(arr[2:])
+
+if 5<2:
+    print(3)
+
+print(34)
