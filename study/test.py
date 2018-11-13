@@ -295,10 +295,19 @@
 # unittest.main()
 
 # arr = [1,2,3,4]
+# arr = range(4, -1, -1)
+# print(arr)
 # print(arr[:2])
 # print(arr[2:])
 
-if 5<2:
-    print(3)
+# if 5<2:
+#     print(3)
 
-print(34)
+# print(34)
+
+def test(arr):
+    arr[1] = 2
+
+b = [1,1,1,1]
+test(b)
+print(b)
