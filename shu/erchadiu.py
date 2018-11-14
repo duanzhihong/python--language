@@ -66,3 +66,4 @@ class BinHeap:
 bh = BinHeap()
 bh.buildHeap([50, 16, 30, 10, 60,  90,  2, 80, 70])
 print(bh.heapList)
+

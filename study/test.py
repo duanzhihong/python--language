@@ -305,9 +305,18 @@
 
 # print(34)
 
-def test(arr):
-    arr[1] = 2
+# def test(arr):
+#     arr[1] = 2
 
-b = [1,1,1,1]
-test(b)
-print(b)
+# b = [1,1,1,1]
+# test(b)
+# print(b)
+
+# a = {'a':3}
+# b = a.keys()
+# print(b)
+# a = (1,2,3,4,5)
+# b, c, d, e, f = a
+# print(b)
+a = {1:{2:3}}
+print(a[1][2])
