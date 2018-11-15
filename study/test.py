@@ -318,5 +318,10 @@
 # a = (1,2,3,4,5)
 # b, c, d, e, f = a
 # print(b)
-a = {1:{2:3}}
-print(a[1][2])
+# a = {1:{2:3}}
+# print(a[1][2])
+
+# a,b = divmod(5, 2) #返回商和余数
+# print(a)
+# print(b)
+print(3//2)
