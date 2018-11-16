@@ -324,4 +324,9 @@
 # a,b = divmod(5, 2) #返回商和余数
 # print(a)
 # print(b)
-print(3//2)
+# print(3//2)
+
+for a in range(5,-1, -1):
+    print(a)
+
+    
