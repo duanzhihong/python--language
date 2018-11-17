@@ -54,6 +54,93 @@ def kuaipai(arr):
     arr2 = kuaipai(arr2)
     return arr1+[minData]+arr2
 
-arr = [1,3,2,4,5,9,8,7,10,6]
-arr = kuaipai(arr)
-print(arr)
+#广度优先遍历，深度优先遍历
+class Graph:
+    #表示图，使用字典，记录节点的个数，对应的数组里面保存相连的节点
+    def __init__(self):
+        self.nodeList = {} #节点的列表
+        self.vistied = {} #访问过的节点
+    def addNode(self, nodeArr):
+        for i in nodeArr:
+            if i not in self.nodeList.keys():
+                self.nodeList[i] = []
+    def createSide(self, edge):
+        v,u = edge
+        if u not in self.nodeList[v] and (v not in self.nodeList[u]):
+            self.nodeList[v].append(u)
+            self.nodeList[u].append(v)
+    #广度遍历
+    def breadthFirstSearch(self, node):
+        queue = [] #模拟队列,广度遍历需要使用队列的数据结构
+        sort = []
+        if node:
+            queue.append(node)
+            queue.sort(node)
+            self.bfs(node, queue, sort)
+        return sort   
+    def bfs(self, node, queue, sort):
+        while len(queue) > 0:
+            node = queue.pop(0)#出队列
+            self.vistied[node] = True#记录已经访问过
+            for i in self.nodeList[node]:
+                if i not in queue and i not in sort:
+                    queue.append(i)
+                    sort.append(i)
+    
+    #深度遍历 递归遍历，访问一个节点后，继续访问该后面的节点
+    def depthFirstSearch(self, node):
+        sort = []
+        if node:
+            self.dfs(node, sort)
+        return sort
+    def dfs(self, node,sort):
+        sort.append(node)
+        self.vistied[node] = True
+        for i in self.nodeList[node]:
+            if i not in self.vistied:
+                self.dfs(i, sort)
+
+graph = Graph()
+graph.addNode([1, 2, 3, 4, 5, 6, 7, 8])
+graph.createSide((1, 2))
+graph.createSide((1, 3))
+graph.createSide((2, 4))
+graph.createSide((2, 5))
+graph.createSide((4, 8))
+graph.createSide((5, 8))
+graph.createSide((3, 6))
+graph.createSide((3, 7))
+graph.createSide((6, 7))
+# sort1 = graph.breadthFirstSearch(1)
+sort1 = graph.depthFirstSearch(1)
+# print(sort1)
+def createBigHeap(arr, start, end):
+    nowRoot = start
+    while True:
+        child = nowRoot*2
+        if child > end:
+            break
+        if (child+1 <= end) and (arr[child] < arr[child+1]):
+            child = child+1
+        if (arr[nowRoot] < arr[child]):
+            arr[nowRoot], arr[child] = arr[child], arr[nowRoot]
+            nowRoot = child
+        else:
+            break
+
+
+
+#堆排序
+def heapSort(arr):
+    #创建大跟堆
+    first = len(arr)//2
+    for start in range(first, 0, -1):
+        createBigHeap(arr, start, len(arr)-1)
+    #堆排序
+    for end in range(len(arr)-1, 0 , -1):
+        arr[1], arr[end] = arr[end], arr[1]
+        createBigHeap(arr, 1, end-1)
+    return arr
+arr = [0, 16, 7, 3, 20, 17, 8]
+result = heapSort(arr)
+print(result)
