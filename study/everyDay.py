@@ -142,5 +142,64 @@ def heapSort(arr):
         createBigHeap(arr, 1, end-1)
     return arr
 arr = [0, 16, 7, 3, 20, 17, 8]
-result = heapSort(arr)
-print(result)
+# result = heapSort(arr)
+# print(result)
+
+#希尔排序，归并排序
+#希尔排序，通过使用增量
+def xier(arr):
+    grep = len(arr)//2
+    while grep > 0:
+        for i in range(grep):
+            xierSort(arr, i, grep)
+        grep = grep//2    
+
+def xierSort(arr, i, grep):
+    for j in range(i+grep, len(arr), grep):
+        nowData = arr[j]
+        nowPosition = j 
+        while nowPosition > grep and arr[nowPosition-grep] > nowData:
+            arr[nowPosition] = arr[nowPosition-grep]
+            nowPosition = nowPosition-grep
+        arr[nowPosition] = nowData
+
+alist = [12,26,33,17,67,39,42,155,204]
+xier(alist)
+print(alist)
+
+#归并排序
+def guibing(arr):
+    if len(arr) > 1:
+        #分
+        mid = len(arr)//2
+        leftArr = arr[:mid]
+        rightArr = arr[mid:]
+
+        guibing(leftArr)
+        guibing(rightArr) 
+
+        #治
+        i = 0
+        j = 0
+        k = 0
+        while i < len(leftArr) and j < len(rightArr):
+            if leftArr[i] < rightArr[j]:
+                arr[k] = leftArr[i]
+                i = i+1
+            else:
+                arr[k] = rightArr[j]
+                j = j+1
+            k = k+1
+        #右侧数组已经全部放入了新数组中   
+        while i < len(leftArr):
+            arr[k] = leftArr[i]
+            i = i+1
+            k = k+1
+        while j < len(rightArr):
+            arr[k] = rightArr[j]
+            j = j+1
+            k = k+1
+    
+arr = [54,26,93,17,77,31,44,55,20]
+guibing(arr)
+print(arr)
