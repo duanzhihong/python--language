@@ -165,7 +165,7 @@ def xierSort(arr, i, grep):
 
 alist = [12,26,33,17,67,39,42,155,204]
 xier(alist)
-print(alist)
+# print(alist)
 
 #归并排序
 def guibing(arr):
@@ -202,4 +202,4 @@ def guibing(arr):
     
 arr = [54,26,93,17,77,31,44,55,20]
 guibing(arr)
-print(arr)
+# print(arr)
