@@ -326,7 +326,5 @@
 # print(b)
 # print(3//2)
 
-for a in range(5,-1, -1):
-    print(a)
-
-    
+for i in range(5,1, -1):
+    print(i)

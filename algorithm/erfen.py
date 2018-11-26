@@ -1,21 +1,18 @@
 #二分法，基于有序排列进行查找
 import math
 #while循环实现
-def binarySearch(arr, item):
+def binarySearch(arr, findData):
     low = 0
-    height = len(arr)-1
-    if arr[0] == item:
-        return 0
-    if arr[height] == item:
-        return height
-    while low<height:
-        mid = (low+height)//2
-        if arr[mid] == item:
-            return mid
-        elif arr[mid] > item:
-            height = mid
-        elif arr[mid] < item:
-            low = mid
+    height = len(arr)
+    while low <= height:
+        midIndex = (low+height) // 2
+        midData = arr[midIndex]
+        if midData == findData:
+            return midIndex
+        if midData < findData:
+            low = midIndex + 1
+        if midData > findData:
+            height = midIndex -1
     return -1
 #递归实现
 def diguiSearch(arr, item, first, last):
