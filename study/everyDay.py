@@ -407,38 +407,114 @@
 # print(index)
 
 #归并排序
-def guibing(arr):
-    if len(arr) > 1:
-        mid = len(arr) // 2
-        leftArr =  arr[:mid]
-        rightArr = arr[mid:]
-        guibing(leftArr)
-        guibing(rightArr)
+# def guibing(arr):
+#     if len(arr) > 1:
+#         mid = len(arr) // 2
+#         leftArr =  arr[:mid]
+#         rightArr = arr[mid:]
+#         guibing(leftArr)
+#         guibing(rightArr)
 
-        i = 0
-        j = 0
-        k = 0
+#         i = 0
+#         j = 0
+#         k = 0
         
-        while i < len(leftArr) and j < len(rightArr):
-            if leftArr[i] > rightArr[j]:
-                arr[k] = rightArr[j]
-                j = j + 1
-            else:
-                arr[k] = leftArr[i]
-                i = i + 1
-            k = k + 1
+#         while i < len(leftArr) and j < len(rightArr):
+#             if leftArr[i] > rightArr[j]:
+#                 arr[k] = rightArr[j]
+#                 j = j + 1
+#             else:
+#                 arr[k] = leftArr[i]
+#                 i = i + 1
+#             k = k + 1
 
-        while i < len(leftArr):
-            arr[k] = leftArr[i]
-            i = i + 1
-            k = k + 1
+#         while i < len(leftArr):
+#             arr[k] = leftArr[i]
+#             i = i + 1
+#             k = k + 1
 
-        while j < len(rightArr):
-            arr[k] = rightArr[j]
-            j = j + 1
-            k = k + 1
+#         while j < len(rightArr):
+#             arr[k] = rightArr[j]
+#             j = j + 1
+#             k = k + 1
     
-    return  arr
-arr = [12, 32, 11, 45, 33, 36, 21, 85, 3]
-arr = guibing(arr)
-print(arr)
+#     return  arr
+# arr = [12, 32, 11, 45, 33, 36, 21, 85, 3]
+# arr = guibing(arr)
+# print(arr)
+
+#冒泡
+# def maopao(arr):
+#     for i  in range(len(arr)-1, -1, -1):
+#         for j in range(i):
+#             if arr[j] > arr[j+1]:
+#                 tmp = arr[j]
+#                 arr[j] = arr[j+1]
+#                 arr[j+1] = tmp
+#     return arr
+# arr = [12, 32, 11, 45, 33, 36, 21, 85, 3]
+# arr = maopao(arr)
+# print(arr)
+
+#希尔
+# def xier(arr):
+#     incre = len(arr) // 2
+#     while incre > 0:
+#         #插入排序
+#         for startPostion in range(incre):
+#             xierHelp(arr, startPostion, incre)
+#         incre = incre // 2
+
+# def xierHelp(arr, startPostion, incre):
+#     for i in range(startPostion+incre, len(arr), incre):
+#         current = arr[i]
+#         position = i
+#         while position > 0 and arr[position-incre] > current:
+#             arr[position] = arr[position-incre]
+#             position = position-incre
+
+#         arr[position] = current
+
+# arr = [12, 32, 11, 45, 33, 36, 21, 85, 3]
+# xier(arr)
+# print(arr)
+
+#选择排序
+# def xuanze(arr):
+#     for i in range(len(arr)-1, 0, -1):
+#         tmpMin = i
+#         for j in range(i):
+#             if arr[j] > arr[tmpMin]:
+#                 tmpMin = j
+        
+#         tmp = arr[i]
+#         arr[i] = arr[tmpMin]
+#         arr[tmpMin] = tmp
+
+#     return arr
+
+# arr = [12, 32, 11, 45, 33, 36, 21, 85, 3]
+# arr = xuanze(arr)
+# print(arr)
+
+
+#深度遍历，广度遍历
+class Graph:
+    def __init__(self):
+        self.nodeList = {}
+        self.visited = {}
+    #创建点
+    def createNode(self,nodeArr):
+        for i  in nodeArr:
+            if i not in self.nodeList.keys():
+                self.nodeList[i] = []
+    #创建边
+    def createSide(self, start, end):
+        if self.nodeList[start] != end and self.nodeList[end] != start:
+            self.nodeList[start] = end
+            self.nodeList[end] = start
+nodeArr = range(0,6)
+grap = Graph()
+grap.createNode(nodeArr)
+nodeList = grap.nodeList
+print(nodeList)
